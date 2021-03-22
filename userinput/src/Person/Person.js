@@ -1,8 +1,9 @@
 import React from "react";
+import "./Person.css";
 
 const UserInput = (props) => {
   return (
-    <div>
+    <div className="Input">
       <p></p>
       <input type="text" onChange={props.changed} value={props.name}></input>
     </div>
@@ -11,9 +12,9 @@ const UserInput = (props) => {
 
 const UserOutput = (props) => {
   return (
-    <div>
-      <p>Hey there {props.name}</p>
-      <p>Your weight is {props.weight}</p>
+    <div className="Output">
+      <p>Greetings! {props.name}</p>
+      <p>I am from {props.city}</p>
     </div>
   );
 };

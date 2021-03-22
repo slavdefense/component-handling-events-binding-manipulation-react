@@ -6,16 +6,16 @@ import "./App.css";
 class App extends Component {
   state = {
     Person: [
-      { name: "Anson Lama", weight: "two hundred" },
-      { name: "Ricky", weight: "one hundred" },
+      { name: "Boss", city: "Los Angeles,CA" },
+      { name: "Sagun Shrestha", city: "Los Angeles,CA" },
     ],
   };
 
   switchNameHandler = () => {
     this.setState({
       Person: [
-        { name: "Peter", weight: "two hundred" },
-        { name: "caliboy", weight: "one hundred" },
+        { name: "Boss", city: "two hundred" },
+        { name: "Anywhere", city: "United States" },
       ],
     });
   };
@@ -23,8 +23,8 @@ class App extends Component {
   typeHandler = (event) => {
     this.setState({
       Person: [
-        { name: event.target.value, weight: "two hundred" },
-        { name: "caliboy", weight: "one hundred" },
+        { name: event.target.value, city: "" },
+        { name: "", city: "" },
       ],
     });
   };
@@ -32,15 +32,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.switchNameHandler}>Hello</button>
+        <button onClick={this.switchNameHandler}>Click me!</button>
 
         <UserOutput
           name={this.state.Person[0].name}
-          weight={this.state.Person[0].weight}
+          city={this.state.Person[0].city}
         ></UserOutput>
         <UserOutput
           name={this.state.Person[1].name}
-          weight={this.state.Person[1].weight}
+          city={this.state.Person[1].city}
         ></UserOutput>
         <UserInput changed={this.typeHandler}></UserInput>
       </div>
